@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolte Patil Alora</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/forms/poplogo.png">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+<!-- NAVBAR -->
+<div class="navbar-fixed">
+    <nav class="nav-extended ">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo"><img src="/static/images/nav/logo.png" width="150" height="80"></a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#configurations">Configuration</a></li>
+                <li><a href="#amenities">Amenities</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="tel:1800 266 6654">1800 266 6654</a></li>
+            </ul>
+            <a href=""><img src="/static/images/nav/buliders.png" alt="" width="150" height="80" id="builder"></a>
+        </div>
+    </nav>
+</div>
+<ul class="sidenav" id="mobile-demo">
+    <li><a href="#overview-mob">Overview</a></li>
+    <li><a href="#configurations">Configuration</a></li>
+    <li><a href="#amenities">Amenities</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+    <li><a href="">+91 22 68493094</a></li>
+    <li style="text-align: justify;"><a href="tel:1800 266 6654">1800 266 6654</a></li>
+</ul>
+<div class="slider" id="overview">
+    <ul class="slides">
+        <li>
+            <img src="/static/images/banner/banner1.jpg" class="responsive-img"> <!-- random image -->
+        </li>
+        <li>
+            <img src="/static/images/banner/banner2.jpg" class="responsive-img"> <!-- random image -->
+        </li>
+        <li>
+            <img src="/static/images/banner/banner3.jpg" class="responsive-img"> <!-- random image -->
+        </li>
+        <li>
+            <img src="/static/images/banner/banner4.jpg" class="responsive-img"> <!-- random image -->
+        </li>
+    </ul>
+</div>
+<div class="slider" id="overview-mob">
+    <ul class="slides">
+        <li>
+            <img src="/static/images/banner/m1-banner.jpg" class="responsive-img"> <!-- random image -->
+        </li>
+        <li>
+            <img src="/static/images/banner/m2-banner.jpg" class="responsive-img"> <!-- random image -->
+        </li>
+        <li>
+            <img src="/static/images/banner/m3-banner.jpg" class="responsive-img"> <!-- random image -->
+        </li>
+        <li>
+            <img src="/static/images/banner/m4-banner.jpg" class="responsive-img"> <!-- random image -->
+        </li>
+    </ul>
+</div>
+
+<div class="box-container">
+    <div class="two-box">
+        <div class="box-one">
+            <h3>OVERVIEW</h3>
+            <h2>CELEBRATE LEISURE EVERYDAY</h2>
+            <hr>
+            <p>Welcome to Alora, an inspired edifice that celebrates life. Leisure is the buzzword of life here in
+                Alora. The collage of memories here is filled with blissful moments like leisurely reading a book,
+                sketching sitting beside lush green trees, celebrating community gatherings with friendly neighbours
+                or
+                just a stroll along the curated green lawns.</p>
+        </div>
+        <div class="box-two">
+            <p id="form-head">REGISTER YOUR INTEREST</p>
+            <form action="{{ url_for("get_data_overview") }}" method="post">
+                <div class="input-field">
+                    <i class="material-icons prefix">person</i>
+                    <textarea id="overview-name" name="overview-name" class="materialize-textarea" required></textarea>
+                    <label for="overview-name">Name*</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">phone</i>
+                    <textarea id="overview-phone" name="overview-phone" class="materialize-textarea"
+                              required></textarea>
+                    <label for="overview-phone">Phone*</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">email</i>
+                    <textarea id="overview-email" name="overview-email" class="materialize-textarea"></textarea>
+                    <label for="overview-email">Email*</label>
+                </div>
+                <p>
+                    <label>
+                        <input type="checkbox" required/>
+                        <span>I consent to the processing of my personal data according to <a class="modal-trigger"
+                                                                                              href="#modal1">Privacy policy</a></span>
+                    </label>
+                </p>
+                <div class="button">
+                    <button class="waves-effect waves-light btn" type="submit" onclick="overview()"><i
+                            class="material-icons right">send</i>SUBMIT
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="fixed-action-btn enq-btn">
+    <a class="btn-floating pulseanimation modal-trigger" href="#modal4">Enquire Now</a>
+</div>
+
+<div id="modal4" class="modal">
+    <img src="/static/images/forms/poplogo.png" alt="" srcset="" class="center" width="100px">
+    <div class="modal-content container">
+        <h4>EXPRESS YOUR INTEREST</h4>
+        <p>Please Enter Your Details To Know More About Kolte Patil Alora</p>
+        <form action="{{ url_for("get_data_enquire") }}" method="post">
+            <div class="input-field">
+                <i class="material-icons prefix">person</i>
+                <textarea id="enquire-name" name="enquire-name" class="materialize-textarea" required></textarea>
+                <label for="enquire-name">Name*</label>
+            </div>
+            <div class="input-field">
+                <i class="material-icons prefix">phone</i>
+                <textarea id="enquire-phone" name="enquire-phone" class="materialize-textarea" required></textarea>
+                <label for="enquire-phone">Phone*</label>
+            </div>
+            <div class="input-field">
+                <i class="material-icons prefix">email</i>
+                <textarea id="enquire-email" name="enquire-email" class="materialize-textarea"></textarea>
+                <label for="enquire-email">Email</label>
+            </div>
+            <div class="button">
+                <button type="submit" class="waves-effect waves-light btn"><i class="material-icons right">send</i>SUBMIT
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4>Privacy Policy</h4>
+    </div>
+    <div class="privacy-content">
+        <div class="container">
+            <p>Privacy Policy : We collect information from you when you register on our site or fill out a form.
+                When
+                filling out a form on our site, for any of the above-mentioned reasons, you may be asked to enter
+                your:
+                name, e-mail address and phone number. You may, however, visit our site anonymously. Any of the
+                information we collect from you is to personalize your experience, to improve our website and to
+                improve
+                customer service. Any data collected will not be shared with any 3rd party.
+            </p>
+            <div class="button-privacy">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="project-highlights">
+    <div class="container">
+        <h2>PROJECT HIGHLIGHTS</h2>
+        <hr>
+        <div class="project-boxes">
+            <div class="box">
+                <img src="/static/images/project_highlights/box1.png" alt="" class="center" srcset="">
+                <p>Gated community living</p>
+            </div>
+            <div class="box">
+                <img src="/static/images/project_highlights/box2.png" alt="" class="center" srcset="">
+                <p>Excellent Connectivity</p>
+            </div>
+            <div class="box">
+                <img src="/static/images/project_highlights/box3.png" alt="" class="center" srcset="">
+                <p>Dedicated Green Spaces</p>
+            </div>
+            <div class="box">
+                <img src="/static/images/project_highlights/box4.png" alt="" class="center" srcset="">
+                <p>Leisurely lifestyle amenities</p>
+            </div>
+            <div class="box">
+                <img src="/static/images/project_highlights/box5.png" alt="" class="center" srcset="">
+                <p>Optimally Planned Spaces</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="configurations" class="config">
+    <h2>CONFIGURATIONS</h2>
+    <hr>
+    <div class="config-boxes container">
+        <div class="config-box">
+            <h2>2 Bed</h2>
+            <hr>
+            <h2>743.90 - 791.91 <br>SQ.FT.</h2>
+            <hr>
+            <div class="config-modal">
+                <!-- Modal Trigger -->
+                <a class="waves-effect waves-light btn modal-trigger" href="#modal2">₹ Check Price</a>
+            </div>
+        </div>
+        <div class="config-box">
+            <h2>3 Bed</h2>
+            <hr>
+            <h2>860.20 - 1111.81 <br>SQ.FT.</h2>
+            <hr>
+            <div class="config-modal">
+                <!-- Modal Trigger -->
+                <a class="waves-effect waves-light btn modal-trigger" href="#modal2">₹ Check Price</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Structure -->
+<div id="modal2" class="modal">
+    <img src="/static/images/forms/poplogo.png" alt="" srcset="" class="center" width="100px">
+    <div class="modal-content container">
+        <h3>Price</h3>
+        <p>Please Enter Your Details To Know More About Kolte Patil Alora</p>
+        <form action="/get_data_config" method="post">
+            <div class="input-field">
+                <i class="material-icons prefix">person</i>
+                <textarea id="config-name" name="config-name" class="materialize-textarea" required></textarea>
+                <label for="config-name">Name*</label>
+            </div>
+            <div class="input-field">
+                <i class="material-icons prefix">phone</i>
+                <textarea id="config-phone" name="config-phone" class="materialize-textarea" required></textarea>
+                <label for="config-phone">Phone*</label>
+            </div>
+            <div class="input-field">
+                <i class="material-icons prefix">email</i>
+                <textarea id="config-email" name="config-email" class="materialize-textarea"></textarea>
+                <label for="config-email">Email</label>
+            </div>
+            <div class="button">
+                <button type="submit" class="waves-effect waves-light btn"><i class="material-icons right">send</i>SUBMIT
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div class="ameni" id="amenities">
+    <h2>AMENITIES</h2>
+    <hr>
+    <div class="ameni-boxes">
+        <div class="ameni-box">
+            <div class="ameni-box-img">
+                <img src="/static/images/amenities/1.png" alt="" srcset="">
+            </div>
+            <p>Pool Shower</p>
+        </div>
+        <div class="ameni-box">
+            <div class="ameni-box-img">
+                <img src="/static/images/amenities/2.png" alt="" srcset="">
+            </div>
+            <p>Jogging Track</p>
+        </div>
+        <div class="ameni-box">
+            <div class="ameni-box-img">
+                <img src="/static/images/amenities/3.png" alt="" srcset="">
+            </div>
+            <p>Green Lawn</p>
+        </div>
+        <div class="ameni-box">
+            <div class="ameni-box-img">
+                <img src="/static/images/amenities/4.png" alt="" srcset="">
+            </div>
+            <p>Indoor Games Arena</p>
+        </div>
+        <div class="ameni-box">
+            <div class="ameni-box-img">
+                <img src="/static/images/amenities/5.png" alt="" srcset="">
+            </div>
+            <p>Double Height Entrance Lobby</p>
+        </div>
+        <div class="ameni-box">
+            <div class="ameni-box-img">
+                <img src="/static/images/amenities/6.png" alt="" srcset="">
+            </div>
+            <p>Amphitheare</p>
+        </div>
+        <div class="ameni-box">
+            <div class="ameni-box-img">
+                <img src="/static/images/amenities/7.png" alt="" srcset="">
+            </div>
+            <p>Green Zone</p>
+        </div>
+        <div class="ameni-box">
+            <div class="ameni-box-img">
+                <img src="/static/images/amenities/8.png" alt="" srcset="">
+            </div>
+            <p>Multipurpose Hall</p>
+        </div>
+        <div class="ameni-box">
+            <div class="ameni-box-img">
+                <img src="/static/images/amenities/9.png" alt="" srcset="">
+            </div>
+            <p>Water Feature Hall</p>
+        </div>
+        <div class="ameni-box">
+            <div class="ameni-box-img">
+                <img src="/static/images/amenities/10.png" alt="" srcset="">
+            </div>
+            <p>Kids Play Area</p>
+        </div>
+        <div class="ameni-box">
+            <div class="ameni-box-img">
+                <img src="/static/images/amenities/11.png" alt="" srcset="">
+            </div>
+            <p>Fitness Centre</p>
+        </div>
+        <div class="ameni-box">
+            <div class="ameni-box-img">
+                <img src="/static/images/amenities/12.png" alt="" srcset="">
+            </div>
+            <p>Infinity Edge Swimming Pool</p>
+        </div>
+        <div class="ameni-box">
+            <div class="ameni-box-img">
+                <img src="/static/images/amenities/13.png" alt="" srcset="">
+            </div>
+            <p>Kids Pool</p>
+        </div>
+        <div class="ameni-box">
+            <div class="ameni-box-img">
+                <img src="/static/images/amenities/14.png" alt="" srcset="">
+            </div>
+            <p>Pool Deck</p>
+        </div>
+    </div>
+</div>
+
+<div class="connect" id="location">
+    <h2>CONNECTIVITY</h2>
+    <hr>
+    <div class="connect-boxes container">
+        <div class="connect-box">
+            <img class=" materialboxed" width="400" height="390" src="/static/images/connect/map.jpg">
+        </div>
+        <div class="connect-box">
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">add_box</i><span>AIRPORT</span></div>
+                    <div class="collapsible-body">
+                        <p><i class="material-icons">location_on</i>&nbsp; International Airport 15 minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; Domestic Airport 15 minutes</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">add_box</i><span>RAILWAY</span></div>
+                    <div class="collapsible-body">
+                        <p><i class="material-icons">location_on</i>&nbsp; Santacruz Station 10 minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; Kurla Station 10 minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; Khar Station 15 minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; Bandra Station 15 minutes</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">add_box</i><span>METRO</span></div>
+                    <div class="collapsible-body">
+                        <p><i class="material-icons">location_on</i>&nbsp; MTNL Metro Station 5 minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; Santacruz Metro Station 10 minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; Vidyanagari Metro Station 10 minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; BKC Metro Station 10 minutes</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">add_box</i><span>ROAD</span></div>
+                    <div class="collapsible-body">
+                        <p><i class="material-icons">location_on</i>&nbsp; Western Express Highway 5 minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; SCLR 5 minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; Kurla CST Road 10 minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; LBS Road 10 minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; Eastern Express Highway 15 minutes</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">add_box</i><span>EDUCATION</span>
+                    </div>
+                    <div class="collapsible-body">
+                        <p><i class="material-icons">location_on</i>&nbsp; Bombay College of Pharmacy 2 minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; Kalina Education Society School 2 minutes
+                        </p>
+                        <p><i class="material-icons">location_on</i>&nbsp; Eurokids Preschool 3 minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; St.Mary School & Jr. College 5 minutes
+                        </p>
+                        <p><i class="material-icons">location_on</i>&nbsp; Mumbai University 5 minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; Dhirubhai Ambani International School 10
+                            minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; Sathaye College 15 minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; M.L. Dahanukar College of Commerce 15
+                            minutes</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">add_box</i><span>HEALTHCARE</span>
+                    </div>
+                    <div class="collapsible-body">
+                        <p><i class="material-icons">location_on</i>&nbsp; Kalina Hospital 2 minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; Air India Medical Clinic 3 minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; Niron Hospital 5 minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; Asian Heart Institute 10 minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; Lilavati Hospital 15 minutes</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">add_box</i><span>ENTERTAINMENT</span>
+                    </div>
+                    <div class="collapsible-body">
+                        <p><i class="material-icons">location_on</i>&nbsp; Jio Garden 10 minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; Jio World Drive 15 minutes</p>
+                        <p><i class="material-icons">location_on</i>&nbsp; Phoenix Market City-Kurla 15 minutes</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="gallery" id="gallery">
+    <h2>GALLERY</h2>
+    <hr>
+    <div class="gallery-desktop">
+        <div class="buttons-gallery">
+            <button class="waves-effect btn" id="interior-button" onclick="interior()">INTERIOR</button>
+            <button class="waves-effect btn" id="exterior-button" onclick="exterior()">EXTERIOR</button>
+            <button class="waves-effect btn" id="amenities-button" onclick="amenities()">AMENITIES</button>
+            <button class="waves-effect btn" id="layout-button" onclick="layout()">MASTER LAYOUT PLAN</button>
+        </div>
+        <div id="interiors-gallery">
+            <img class="materialboxed" src="/static/images/gallery/interior-1.jpg" alt="" srcset="">
+            <img class="materialboxed" src="/static/images/gallery/interior-2.jpg" alt="" srcset="">
+            <img class="materialboxed" src="/static/images/gallery/interior-3.jpg" alt="" srcset="">
+        </div>
+        <div id="exteriors-gallery">
+            <img class="materialboxed" src="/static/images/gallery/exterior-1.jpg" alt="" srcset="">
+            <img class="materialboxed" src="/static/images/gallery/exterior-2.jpg" alt="" srcset="">
+            <img class="materialboxed" src="/static/images/gallery/exterior-3.jpg" alt="" srcset="">
+        </div>
+        <div id="amenities-gallery">
+            <img class="materialboxed" src="/static/images/gallery/amenities-1.jpg" alt="" srcset="">
+            <img class="materialboxed" src="/static/images/gallery/amenities-2.jpg" alt="" srcset="">
+            <img class="materialboxed" src="/static/images/gallery/amenities-3.jpg" alt="" srcset="">
+        </div>
+        <div id="layout-gallery">
+            <img class="materialboxed modal-trigger" data-target="modal3" width="60%"
+                 src="/static/images/gallery/layout-plan.jpg" alt="" srcset="">
+        </div>
+    </div>
+
+</div>
+<div class="gallery" id="gallery-mob">
+    <h2>GALLERY</h2>
+    <hr>
+    <div class="buttons-gallery-mob">
+        <button class="waves-effect btn" id="interior-button-mob" onclick="interior_mob()">INTERIOR</button>
+        <button class="waves-effect btn" id="exterior-button-mob" onclick="exterior_mob()">EXTERIOR</button>
+        <button class="waves-effect btn" id="amenities-button-mob" onclick="amenities_mob()">AMENITIES</button>
+        <button class="waves-effect btn" id="layout-button-mob" onclick="layout_mob()">MASTER LAYOUT
+            PLAN
+        </button>
+    </div>
+    <div class="slider" id="interiors-gallery-mob">
+        <ul class="slides">
+            <li>
+                <img class="materialboxed" src="/static/images/gallery/interior-1.jpg" alt="" srcset="">
+            </li>
+            <li>
+                <img class="materialboxed" src="/static/images/gallery/interior-2.jpg" alt="" srcset="">
+            </li>
+            <li>
+                <img class="materialboxed" src="/static/images/gallery/interior-3.jpg" alt="" srcset="">
+            </li>
+        </ul>
+    </div>
+    <div class="slider" id="exteriors-gallery-mob">
+        <ul class="slides">
+            <li>
+                <img class="materialboxed" src="/static/images/gallery/exterior-1.jpg" alt="" srcset="">
+            </li>
+            <li>
+                <img class="materialboxed" src="/static/images/gallery/exterior-2.jpg" alt="" srcset="">
+            </li>
+            <li>
+                <img class="materialboxed" src="/static/images/gallery/exterior-3.jpg" alt="" srcset="">
+            </li>
+        </ul>
+    </div>
+    <div class="slider" id="amenities-gallery-mob">
+        <ul class="slides">
+            <li>
+                <img class="materialboxed responsive-img" src="/static/images/gallery/amenities-1.jpg" alt="" srcset="">
+            </li>
+            <li>
+                <img class="materialboxed responsive-img" src="/static/images/gallery/amenities-2.jpg" alt="" srcset="">
+            </li>
+            <li>
+                <img class="materialboxed responsive-img" src="/static/images/gallery/amenities-3.jpg" alt="" srcset="">
+            </li>
+        </ul>
+    </div>
+    <div id="layout-gallery-mob">
+        <img class="materialboxed modal-trigger" data-target="modal3" width="90%"
+             src="/static/images/gallery/layout-plan.jpg" alt="" srcset="">
+    </div>
+</div>
+
+<!-- Modal Structure -->
+<div id="modal3" class="modal">
+    <img src="/static/images/forms/poplogo.png" alt="" srcset="" class="center" width="100px">
+    <div class="modal-content container">
+        <h4>DOWNLOAD FLOOR PLAN</h4>
+        <p>Please Enter Your Details To Know More About Kolte Patil Alora</p>
+        <form action="/get_data_ameni" method="post">
+            <div class="input-field">
+                <i class="material-icons prefix">person</i>
+                <textarea id="ameni-name" name="ameni-name" class="materialize-textarea" required></textarea>
+                <label for="ameni-name">Name*</label>
+            </div>
+            <div class="input-field">
+                <i class="material-icons prefix">phone</i>
+                <textarea id="ameni-phone" name="ameni-phone" class="materialize-textarea" required></textarea>
+                <label for="ameni-phone">Phone*</label>
+            </div>
+            <div class="input-field">
+                <i class="material-icons prefix">email</i>
+                <textarea id="ameni-email" name="ameni-email" class="materialize-textarea"></textarea>
+                <label for="ameni-email">Email</label>
+            </div>
+            <div class="button">
+                <button type="submit" onclick="downloadPDF('/static/Project Alora - Flipbook.pdf', 'my_document.pdf')" class="waves-effect waves-light btn">
+                    <i class="material-icons right">send</i>
+                    SUBMIT
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="kolte-patil-info">
+    <h2>KOLTE-PATIL, THE MARK OF EXCELLENCE!</h2>
+    <hr>
+    <div class="img-box-info">
+        <img src="/static/images/nav/buliders.png" alt="" srcset="">
+    </div>
+    <p class="container">At Kolte Patil, We have a steadfast customer-centric approach and a sustainable design
+        philosophy is at the
+        heart of all our projects that are spread across cities like Mumbai, Pune & Bengaluru. Our mantra of
+        "Creation, not Construction" has always highlighted our focus on skills, quality and integrity. In the 3
+        decades of our elevating journey, we have delivered 50+ projects across India with a total area of 23
+        million+ square feet. Besides being India's one of the first real estate listed company, we also hold a
+        consistent A+ Stable rating from CRISIL which is the highest rating given by CRISIL to any publicly listed
+        real estate company in India.
+    </p>
+</div>
+
+<div id="contact" class="contactus">
+    <h2>CONTACT US</h2>
+    <hr>
+    <div class="contact-boxes">
+        <div class="form-box">
+            <h3>Get In Touch</h3>
+            <form action="/get_data_contact" method="post" class="container">
+                <div class="icon">
+                    <i class="medium material-icons">person</i>
+                </div>
+                <div class="form-elements">
+                    <div class="input-field">
+                        <i class="material-icons prefix">person</i>
+                        <textarea id="contact-name" name="contact-name" class="materialize-textarea"
+                                  required></textarea>
+                        <label for="contact-name">Name*</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">phone</i>
+                        <textarea id="contact-phone" name="contact-phone" class="materialize-textarea"
+                                  required></textarea>
+                        <label for="contact-phone">Phone*</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">email</i>
+                        <textarea id="contact-email" name="contact-email" class="materialize-textarea"></textarea>
+                        <label for="contact-email">Email</label>
+                    </div>
+                    <div class="button-contact">
+                        <button type="submit" class="waves-effect waves-light btn"><i
+                                class="material-icons right">send</i>SUBMIT
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="form-box" id="gmaps">
+            <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15082.894692337304!2d72.84535150512639!3d19.075883161966313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8f056697d55%3A0x5608d6bef01b225!2sSunder%20Nagar%20Rd%20Number%202%2C%20Kolivery%20Village%2C%20Vidya%20Nagari%2C%20Kalina%2C%20Santacruz%20East%2C%20Mumbai%2C%20Maharashtra%20400098!5e0!3m2!1sen!2sin!4v1686724602038!5m2!1sen!2sin"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <div class="contact-address">
+        <h3>Site Address</h3>
+        <p>Sunder Nagar Rd Number 2, Vidya Nagari, Kalina, Santacruz East, Mumbai, Maharashtra 400098.</p>
+        <p><i class="medium material-icons">phone</i><a href="tel:1800 266 6654">1800 266 6654</a></p>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-data container">
+        <p>The project has been registered via MAHARERA registration no. P51800049048 and is available on the
+            website http://maharera.mahaonline.gov.in under registered projects.</p>
+        <p>Disclaimer: All art renderings, illustrations, photographs and pictures contained in this advertisement
+            are an artist's impression only and the same should not be considered to be final image view of the
+            project. Since the project is under evaluation there is a possibility that there may be certain changes
+            in the project. Every interested purchaser should take note of this express representation. Kindly visit
+            our website for complete disclosures. *T&C apply.</p>
+        <p>Copyright © 2023 All rights reserved.</p>
+    </div>
+    <div class="mob-links">
+        <div class="call-link">
+            <h5>
+                <a href="tel:1800 266 6654">
+                    <i class="material-icons">phone</i>Call Now
+                    |
+                </a>
+            </h5>
+        </div>
+        <div class="call-link">
+            <a class="modal-trigger" href="#modal4">
+                <h5>
+                    <i class="material-icons">mail</i>
+                    Enquire Now
+                </h5>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.slider').slider({
+            indicators: true
+        });
+    });
+    $(document).ready(function () {
+        $('.fixed-action-btn').floatingActionButton();
+    });
+    M.AutoInit();
+</script>
+<script>
+    function downloadPDF(url, filename) {
+        let link = document.createElement('a');
+        link.href = url;
+        link.target = '_blank';
+        link.download = filename || 'document.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+</script>
+<script src="/static/js/amenities.js"></script>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
