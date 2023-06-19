@@ -7,13 +7,12 @@
 
     #overview-mob {
         display: block !important;
-        height: 800px !important;
+        height: 700px !important;
     }
 
     #overview-mob ul {
-        height: 800px !important;
+        height: 670px !important;
     }
-
     .sidenav {
         background-color: black !important;
         opacity: 0.7;
@@ -232,7 +231,18 @@ nav ul a:hover {
     color: #2f3d88 !important;
     user-select: none;
 }
-
+.call-btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 5% !important;
+}
+.call-btn a{
+    background: linear-gradient(to right, #d75b8e, #5e3f8d);
+    font-size: 250%;
+}
+.call-btn a i{
+    font-size: 2.6rem !important;
+}
 #overview-mob {
     display: none;
 }
