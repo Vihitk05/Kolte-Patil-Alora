@@ -246,7 +246,12 @@ nav ul a:hover {
 #overview-mob {
     display: none;
 }
-
+#overview{
+    height: 600px !important;
+}
+#overview .slides{
+    height: 560px !important;
+}
 .two-box {
     margin-top: 5%;
     display: flex;
